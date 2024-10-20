@@ -21,17 +21,17 @@ def get_user_input():
     selected_手術法 = st.sidebar.selectbox('手術法', list(手術法_options.keys()))
 
     new_data = {
-        '2.02 受傷前の活動性': 受傷前の活動性_options[selected_受傷前の活動性],
-        '2.04 術前全身状態　ASA grade': 術前全身状態_options[selected_術前全身状態],
-        '2.07 骨折のタイプ_2. 転位型大腿骨頚部骨折': 骨折のタイプ1_options[selected_骨折のタイプ1],
-        '2.07 骨折のタイプ_3. 大腿骨転子部骨折（頚基部骨折を含む）': 骨折のタイプ2_options[selected_骨折のタイプ2],
-        '3.03 手術法_4. 髄内釘': 手術法_options[selected_手術法],
         '体重': st.sidebar.number_input('体重', min_value=0.0, step=0.1),
         'sum_of_digits': st.sidebar.number_input('入院時ADLスコア合計点', min_value=0, step=1),
         'BMI': st.sidebar.number_input('BMI', min_value=0.0, step=0.1),
         '入院-手術時間': st.sidebar.number_input('入院-手術時間（分）', min_value=0, step=1),
         '1.04 受傷時年齢': st.sidebar.number_input('受傷時年齢', min_value=0, step=1),
+        '2.02 受傷前の活動性': 受傷前の活動性_options[selected_受傷前の活動性],
         '2.03 術前 簡易認知テスト(AMTS)': st.sidebar.number_input('術前簡易認知テスト点数', min_value=0, max_value=10, step=1),
+        '2.04 術前全身状態　ASA grade': 術前全身状態_options[selected_術前全身状態],
+        '2.07 骨折のタイプ_2. 転位型大腿骨頚部骨折': 骨折のタイプ1_options[selected_骨折のタイプ1],
+        '2.07 骨折のタイプ_3. 大腿骨転子部骨折（頚基部骨折を含む）': 骨折のタイプ2_options[selected_骨折のタイプ2],
+        '3.03 手術法_4. 髄内釘': 手術法_options[selected_手術法],
         '入院時Alb値': st.sidebar.number_input('入院時Alb値', min_value=0.0, step=0.1),
     }
 
