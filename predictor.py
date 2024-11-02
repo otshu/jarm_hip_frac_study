@@ -81,11 +81,8 @@ def main():
         st.success('歩行自立可能')
     elif prediction[0] == 1:
         st.error('歩行自立困難')
-
-    # Additional information and links
-    st.markdown('''---
-    ADLスコアに関する詳細は、[こちらのWebサイト](https://drive.google.com/file/d/1AhGz5JY1b8tShiw0wbDIRWQ8R53NNPnh/view?usp=sharing)をご覧ください。
-    ''')
+    
+    st.markdown('ADLスコアに関する詳細は、[こちらのWebサイト](https://drive.google.com/file/d/1AhGz5JY1b8tShiw0wbDIRWQ8R53NNPnh/view?usp=sharing)をご覧ください。')
     st.markdown('術前簡易認知テストに関する詳細は、[こちらのWebサイト](https://drive.google.com/file/d/1q8FgCtwWU8IHpIkNUSejOCQTUscjnSZL/view?usp=sharing)をご覧ください。')
     st.markdown('当Webアプリに関するお問い合わせは、[こちらのWebサイト](https://docs.google.com/forms/d/e/1FAIpQLSd1oTT2XlnQ8R6kGuMBG5jU4ML72Qc5BE4nS3DP5orzY6pt9Q/viewform)からお願いいたします。')
 
