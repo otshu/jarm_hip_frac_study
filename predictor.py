@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pickle
+from datetime import datetime
 
 # Load the model
 with open('model_jarm_hip_frac_study.pkl', 'rb') as f:
@@ -31,11 +32,27 @@ def get_user_input():
     else:
         bmi = 0.0
 
+    # 入院日時と手術開始日時を入力
+    admission_date = st.sidebar.date_input('入院日')
+    admission_time = st.sidebar.time_input('入院時間')
+    surgery_date = st.sidebar.date_input('手術日')
+    surgery_time = st.sidebar.time_input('手術時間')
+
+    # datetimeオブジェクトを作成
+    admission_datetime = datetime.combine(admission_date, admission_time)
+    surgery_datetime = datetime.combine(surgery_date, surgery_time)
+
+    # 入院-手術時間（分）を計算
+    time_difference = (surgery_datetime - admission_datetime).total_seconds() / 60
+    if time_difference < 0:
+        st.sidebar.error('手術開始日時が入院日時よりも前になっています。正しい日時を入力してください。')
+        time_difference = 0  # 負の値を防ぐため
+
     new_data = {
         '体重': weight,
         'sum_of_digits': st.sidebar.number_input('入院時ADLスコア合計点', min_value=0, step=1),
         'BMI': bmi,
-        '入院-手術時間': st.sidebar.number_input('入院-手術時間（分）', min_value=0, step=1),
+        '入院-手術時間': time_difference,
         '1.04 受傷時年齢': st.sidebar.number_input('受傷時年齢', min_value=0, step=1),
         '2.02 受傷前の活動性': 受傷前の活動性_options[selected_受傷前の活動性],
         '2.03 術前 簡易認知テスト(AMTS)': st.sidebar.number_input('術前簡易認知テスト点数', min_value=0, max_value=10, step=1),
