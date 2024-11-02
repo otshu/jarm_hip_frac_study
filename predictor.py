@@ -91,7 +91,7 @@ def main():
     ''')
 
     # 予測結果の下に開発者紹介を表示
-    st.image('developer_photo.JPG',width=300)
+    st.image('developer_photo.jpg',width=300)
     st.markdown('''
     **秋葉 周**  
     1993年東京生まれ。東京都済生会中央病院リハビリテーション技術科所属。  
