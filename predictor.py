@@ -87,7 +87,7 @@ def main():
         st.write('予測結果：歩行自立困難')
 
     # 予測結果の下に開発者紹介を表示
-    #st.image('images/developer_photo.jpg', caption='秋葉 周', use_column_width=True)
+    st.image('developer_photo.JPG', caption='秋葉 周', use_column_width=True)
     st.markdown('''
     ### 開発者紹介
     **秋葉 周**  
