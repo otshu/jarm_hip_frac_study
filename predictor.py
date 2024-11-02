@@ -89,6 +89,18 @@ def main():
         st.write('予測結果：歩行自立可能')
     elif prediction[0] == 1:
         st.write('予測結果：歩行自立困難')
+        
+    # 開発者紹介の写真を表示
+#st.image('developer_photo.jpg', caption='秋葉 周', use_column_width=True)  # 'developer_photo.jpg'は開発者の写真ファイル名
+
+# 開発者紹介のテキストを表示
+st.markdown('''
+### 開発者紹介
+**秋葉 周**  
+1993年東京生まれ。東京都済生会中央病院リハビリテーション技術科所属。  
+吉備国際大学 通信制大学院保健科学研究科 作業療法学専攻 修士課程在籍中（京極•寺岡ゼミ）。  
+企業や大学教員との共同での臨床研究に精力的に取り組んでいます。
+''')
 
 # Run the main function
 if __name__ == '__main__':
