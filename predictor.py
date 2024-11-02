@@ -69,29 +69,29 @@ def get_user_input():
 def main():
     st.title('大腿骨近位部骨折患者の術後2週時点での歩行自立予測')
 
-    # リンク付きの文字を表示
-    st.markdown('ADLスコアに関する詳細は、[こちらのWebサイト](https://drive.google.com/file/d/1AhGz5JY1b8tShiw0wbDIRWQ8R53NNPnh/view?usp=sharing)をご覧ください。')
-    st.markdown('術前簡易認知テストに関する詳細は、[こちらのWebサイト](https://drive.google.com/file/d/1q8FgCtwWU8IHpIkNUSejOCQTUscjnSZL/view?usp=sharing)をご覧ください。')
-    st.markdown('当Webアプリに関するお問い合わせは、[こちらのWebサイト](https://docs.google.com/forms/d/e/1FAIpQLSd1oTT2XlnQ8R6kGuMBG5jU4ML72Qc5BE4nS3DP5orzY6pt9Q/viewform)からお願いいたします。')
-
     # Get user input
     new_data = get_user_input()
 
     # Make prediction
     prediction = model.predict(new_data)
 
-    # Display prediction
+    # Display prediction prominently
+    st.markdown('## 予測結果')
     if prediction[0] == 0:
-        st.write('予測結果：歩行自立可能')
+        st.success('歩行自立可能')
     elif prediction[0] == 1:
-        st.write('予測結果：歩行自立困難')
+        st.error('歩行自立困難')
 
-    st.markdown('''
-    ### 開発者紹介
+    # Additional information and links
+    st.markdown('''---
+    ADLスコアに関する詳細は、[こちらのWebサイト](https://drive.google.com/file/d/1AhGz5JY1b8tShiw0wbDIRWQ8R53NNPnh/view?usp=sharing)をご覧ください。
     ''')
+    st.markdown('術前簡易認知テストに関する詳細は、[こちらのWebサイト](https://drive.google.com/file/d/1q8FgCtwWU8IHpIkNUSejOCQTUscjnSZL/view?usp=sharing)をご覧ください。')
+    st.markdown('当Webアプリに関するお問い合わせは、[こちらのWebサイト](https://docs.google.com/forms/d/e/1FAIpQLSd1oTT2XlnQ8R6kGuMBG5jU4ML72Qc5BE4nS3DP5orzY6pt9Q/viewform)からお願いいたします。')
 
-    # 予測結果の下に開発者紹介を表示
-    st.image('developer_photo.jpg',width=150)
+    # Developer introduction
+    st.markdown('''### 開発者紹介''')
+    st.image('developer_photo.jpg', width=150)
     st.markdown('''
     **秋葉 周**  
     1993年東京生まれ。東京都済生会中央病院リハビリテーション技術科所属。  
