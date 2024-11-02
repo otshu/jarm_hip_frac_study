@@ -75,6 +75,9 @@ def main():
     # リンク付きの文字を表示
     st.markdown('術前簡易認知テストに関する詳細は、[こちらのWebサイト](https://drive.google.com/file/d/1q8FgCtwWU8IHpIkNUSejOCQTUscjnSZL/view?usp=sharing)をご覧ください。')
 
+　　# リンク付きの文字を表示
+    st.markdown('当Webアプリに関するお問い合わせは、[こちらのWebサイト](https://docs.google.com/forms/d/e/1FAIpQLSd1oTT2XlnQ8R6kGuMBG5jU4ML72Qc5BE4nS3DP5orzY6pt9Q/viewform)からお願いいたします。')
+    
     # Get user input
     new_data = get_user_input()
 
