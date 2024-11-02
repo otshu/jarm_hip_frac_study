@@ -69,6 +69,9 @@ def get_user_input():
 def main():
     st.title('大腿骨近位部骨折患者の術後2週時点での歩行自立予測')
 
+    # リンク付きの文字を表示
+    st.markdown('術前簡易認知テストに関する詳細は、[こちらのWebサイト](https://drive.google.com/file/d/1q8FgCtwWU8IHpIkNUSejOCQTUscjnSZL/view?usp=sharing)をご覧ください。')
+
     # Get user input
     new_data = get_user_input()
 
