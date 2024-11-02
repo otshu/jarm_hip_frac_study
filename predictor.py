@@ -81,7 +81,8 @@ def main():
         st.success('歩行自立可能')
     elif prediction[0] == 1:
         st.error('歩行自立困難')
-    
+
+    st.markdown('スマートフォンなどでご利用の方は画面左上の横矢印を押すと入力バーが表示されます。')
     st.markdown('ADLスコアに関する詳細は、[こちらのWebサイト](https://drive.google.com/file/d/1AhGz5JY1b8tShiw0wbDIRWQ8R53NNPnh/view?usp=sharing)をご覧ください。')
     st.markdown('術前簡易認知テストに関する詳細は、[こちらのWebサイト](https://drive.google.com/file/d/1q8FgCtwWU8IHpIkNUSejOCQTUscjnSZL/view?usp=sharing)をご覧ください。')
     st.markdown('当Webアプリに関するお問い合わせは、[こちらのWebサイト](https://docs.google.com/forms/d/e/1FAIpQLSd1oTT2XlnQ8R6kGuMBG5jU4ML72Qc5BE4nS3DP5orzY6pt9Q/viewform)からお願いいたします。')
@@ -92,7 +93,7 @@ def main():
     st.markdown('''
     **秋葉 周**  
     1993年東京生まれ。東京都済生会中央病院リハビリテーション技術科所属。  
-    吉備国際大学 通信制大学院保健科学研究科 作業療法学専攻 修士課程在籍中（京極•寺岡ゼミ）。  
+    吉備国際大学 通信制大学院保健科学研究科 作業療法学専攻 修士課程在籍中（京極・寺岡ゼミ）。  
     企業や大学教員との共同での臨床研究に精力的に取り組んでいます。
     これまで脳卒中、集中治療、運動器、クリニカルパスなどに関する研究を行ってきました。
     休みの日は野菜を育てたり、料理を作ったりしています。
