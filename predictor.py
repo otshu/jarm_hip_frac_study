@@ -20,10 +20,21 @@ def get_user_input():
     selected_骨折のタイプ2 = st.sidebar.selectbox('骨折のタイプ2', list(骨折のタイプ2_options.keys()))
     selected_手術法 = st.sidebar.selectbox('手術法', list(手術法_options.keys()))
 
+    # Get user input for height and weight
+    weight = st.sidebar.number_input('体重 (kg)', min_value=0.0, step=0.1)
+    height = st.sidebar.number_input('身長 (cm)', min_value=0.0, step=0.1)
+
+    # Calculate BMI (height in meters)
+    if height > 0:
+        height_m = height / 100
+        bmi = weight / (height_m ** 2)
+    else:
+        bmi = 0.0
+
     new_data = {
-        '体重': st.sidebar.number_input('体重', min_value=0.0, step=0.1),
+        '体重': weight,
         'sum_of_digits': st.sidebar.number_input('入院時ADLスコア合計点', min_value=0, step=1),
-        'BMI': st.sidebar.number_input('BMI', min_value=0.0, step=0.1),
+        'BMI': bmi,
         '入院-手術時間': st.sidebar.number_input('入院-手術時間（分）', min_value=0, step=1),
         '1.04 受傷時年齢': st.sidebar.number_input('受傷時年齢', min_value=0, step=1),
         '2.02 受傷前の活動性': 受傷前の活動性_options[selected_受傷前の活動性],
